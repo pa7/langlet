@@ -9,12 +9,11 @@
 	$content = curl_exec( $ch );
 	$response = curl_getinfo( $ch );
 	curl_close ( $ch );
-	// -> Translation result powered by Google because of ToS!
 ?>
 (function(){
 		var response = <?php echo urldecode($content); ?>;
 		if(response.responseStatus == 200)
-			window.lL.translatedText(response.responseData.translatedText + " | Translation result powered by Google");
+			window.lL.translatedText(response.responseData.translatedText);
 })();
 <?php 
 	}else{
